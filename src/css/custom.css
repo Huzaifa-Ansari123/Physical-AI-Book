@@ -1,0 +1,518 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Professional Color Theme - Deep Blue, Cyan, Violet Palette */
+
+/* Light mode colors */
+:root {
+  /* Primary - Indigo */
+  --ifm-color-primary: #6366f1;
+  --ifm-color-primary-dark: #4f46e5;
+  --ifm-color-primary-darker: #4338ca;
+  --ifm-color-primary-darkest: #3730a3;
+  --ifm-color-primary-light: #818cf8;
+  --ifm-color-primary-lighter: #a5b4fc;
+  --ifm-color-primary-lightest: #c7d2fe;
+
+  /* Secondary - Violet */
+  --ifm-color-secondary: #a855f7;
+  --ifm-color-secondary-dark: #9333ea;
+  --ifm-color-secondary-darker: #7e22ce;
+  --ifm-color-secondary-darkest: #6b21a8;
+  --ifm-color-secondary-light: #c084fc;
+  --ifm-color-secondary-lighter: #d8b4fe;
+  --ifm-color-secondary-lightest: #e9d5ff;
+
+  /* Success - Emerald */
+  --ifm-color-success: #10b981;
+  --ifm-color-success-dark: #059669;
+  --ifm-color-success-darker: #047857;
+  --ifm-color-success-darkest: #065f46;
+  --ifm-color-success-light: #34d399;
+  --ifm-color-success-lighter: #6ee7b7;
+  --ifm-color-success-lightest: #a7f3d0;
+
+  /* Warning - Amber */
+  --ifm-color-warning: #f59e0b;
+  --ifm-color-warning-dark: #d97706;
+  --ifm-color-warning-darker: #b45309;
+  --ifm-color-warning-darkest: #92400e;
+  --ifm-color-warning-light: #fbbf24;
+  --ifm-color-warning-lighter: #fcd34d;
+  --ifm-color-warning-lightest: #fde68a;
+
+  /* Danger - Rose */
+  --ifm-color-danger: #f43f5e;
+  --ifm-color-danger-dark: #e11d48;
+  --ifm-color-danger-darker: #be123c;
+  --ifm-color-danger-darkest: #9f1239;
+  --ifm-color-danger-light: #fb7185;
+  --ifm-color-danger-lighter: #fda4af;
+  --ifm-color-danger-lightest: #fecdd3;
+
+  /* Info - Cyan */
+  --ifm-color-info: #06b6d4;
+  --ifm-color-info-dark: #0891b2;
+  --ifm-color-info-darker: #0e7490;
+  --ifm-color-info-darkest: #155e75;
+  --ifm-color-info-light: #22d3ee;
+  --ifm-color-info-lighter: #67e8f9;
+  --ifm-color-info-lightest: #a5f3fc;
+
+  /* Code highlighting */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(99, 102, 241, 0.1);
+
+  /* Background colors */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f8fafc;
+  --ifm-hover-overlay: rgba(99, 102, 241, 0.08);
+
+  /* Text colors */
+  --ifm-text-color: #0f172a;
+  --ifm-heading-color: #1e293b;
+  --ifm-link-color: #6366f1;
+  --ifm-link-hover-color: #4f46e5;
+  --ifm-emphasis-color: #1e293b;
+  --ifm-caption-color: #64748b;
+  --ifm-blockquote-color: #475569;
+
+  /* Border colors */
+  --ifm-border-color: #e2e8f0;
+  --ifm-toc-border-color: #cbd5e1;
+}
+
+/* Dark mode colors - Deeper, more vibrant */
+[data-theme='dark'] {
+  /* Primary - More vibrant indigo */
+  --ifm-color-primary: #818cf8;
+  --ifm-color-primary-dark: #6366f1;
+  --ifm-color-primary-darker: #4f46e5;
+  --ifm-color-primary-darkest: #4338ca;
+  --ifm-color-primary-light: #a5b4fc;
+  --ifm-color-primary-lighter: #c7d2fe;
+  --ifm-color-primary-lightest: #e0e7ff;
+
+  /* Secondary - Brighter violet */
+  --ifm-color-secondary: #c084fc;
+  --ifm-color-secondary-dark: #a855f7;
+  --ifm-color-secondary-darker: #9333ea;
+  --ifm-color-secondary-darkest: #7e22ce;
+  --ifm-color-secondary-light: #d8b4fe;
+  --ifm-color-secondary-lighter: #e9d5ff;
+  --ifm-color-secondary-lightest: #f3e8ff;
+
+  /* Success - Brighter emerald */
+  --ifm-color-success: #34d399;
+  --ifm-color-success-dark: #10b981;
+  --ifm-color-success-darker: #059669;
+  --ifm-color-success-darkest: #047857;
+  --ifm-color-success-light: #6ee7b7;
+  --ifm-color-success-lighter: #a7f3d0;
+  --ifm-color-success-lightest: #d1fae5;
+
+  /* Warning - Brighter amber */
+  --ifm-color-warning: #fbbf24;
+  --ifm-color-warning-dark: #f59e0b;
+  --ifm-color-warning-darker: #d97706;
+  --ifm-color-warning-darkest: #b45309;
+  --ifm-color-warning-light: #fcd34d;
+  --ifm-color-warning-lighter: #fde68a;
+  --ifm-color-warning-lightest: #fef3c7;
+
+  /* Danger - Brighter rose */
+  --ifm-color-danger: #fb7185;
+  --ifm-color-danger-dark: #f43f5e;
+  --ifm-color-danger-darker: #e11d48;
+  --ifm-color-danger-darkest: #be123c;
+  --ifm-color-danger-light: #fda4af;
+  --ifm-color-danger-lighter: #fecdd3;
+  --ifm-color-danger-lightest: #ffe4e6;
+
+  /* Info - Brighter cyan */
+  --ifm-color-info: #22d3ee;
+  --ifm-color-info-dark: #06b6d4;
+  --ifm-color-info-darker: #0891b2;
+  --ifm-color-info-darkest: #0e7490;
+  --ifm-color-info-light: #67e8f9;
+  --ifm-color-info-lighter: #a5f3fc;
+  --ifm-color-info-lightest: #cffafe;
+
+  /* Code highlighting */
+  --docusaurus-highlighted-code-line-bg: rgba(129, 140, 248, 0.2);
+
+  /* Background colors */
+  --ifm-background-color: #0f172a;
+  --ifm-background-surface-color: #1e293b;
+  --ifm-hover-overlay: rgba(129, 140, 248, 0.12);
+
+  /* Text colors */
+  --ifm-text-color: #e2e8f0;
+  --ifm-heading-color: #f1f5f9;
+  --ifm-link-color: #818cf8;
+  --ifm-link-hover-color: #a5b4fc;
+  --ifm-emphasis-color: #f1f5f9;
+  --ifm-caption-color: #94a3b8;
+  --ifm-blockquote-color: #cbd5e1;
+
+  /* Border colors */
+  --ifm-border-color: #334155;
+  --ifm-toc-border-color: #475569;
+}
+
+/* Custom button styles for better visual appeal */
+.button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  font-weight: 500 !important;
+  border-radius: 0.75rem !important;
+}
+
+.button--primary {
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-dark)) !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4) !important;
+}
+
+.button--secondary {
+  border: 2px solid var(--ifm-color-primary) !important;
+  color: var(--ifm-color-primary) !important;
+}
+
+.button--secondary:hover {
+  background: var(--ifm-color-primary) !important;
+  color: white !important;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Card hover effects */
+.card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.15);
+}
+
+/* Navbar styling */
+.navbar {
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1) !important;
+}
+
+.navbar__link--active {
+  color: var(--ifm-color-primary) !important;
+}
+
+/* Footer styling */
+.footer {
+  background: linear-gradient(180deg, var(--ifm-background-surface-color) 0%, var(--ifm-background-color) 100%) !important;
+  border-top: 1px solid var(--ifm-border-color) !important;
+}
+
+/* Code block styling */
+.codeBlockContainer {
+  border-radius: 0.75rem !important;
+  overflow: hidden;
+  border: 1px solid var(--ifm-border-color);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ifm-background-surface-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Link hover effects */
+a {
+  transition: color 0.2s ease;
+}
+
+/* Table styling */
+table {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+thead {
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-secondary));
+  color: white !important;
+}
+
+thead tr {
+  border-bottom: none !important;
+}
+
+th {
+  border-bottom: none !important;
+}
+
+/* Alert/Admonition styling */
+.admonition {
+  border-radius: 0.75rem !important;
+  border-left: 4px solid !important;
+}
+
+.admonition--note {
+  border-left-color: var(--ifm-color-info) !important;
+  background: rgba(6, 182, 212, 0.1) !important;
+}
+
+.admonition--tip {
+  border-left-color: var(--ifm-color-success) !important;
+  background: rgba(16, 185, 129, 0.1) !important;
+}
+
+.admonition--warning {
+  border-left-color: var(--ifm-color-warning) !important;
+  background: rgba(245, 158, 11, 0.1) !important;
+}
+
+.admonition--danger {
+  border-left-color: var(--ifm-color-danger) !important;
+  background: rgba(244, 63, 94, 0.1) !important;
+}
+
+/* Creative Sidebar Styling */
+.menu__link {
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 0.5rem;
+  margin: 0.125rem 0;
+  padding: 0.5rem 0.75rem;
+}
+
+.menu__link:hover {
+  background: var(--ifm-hover-overlay);
+  transform: translateX(4px);
+}
+
+.menu__link--active {
+  background: linear-gradient(90deg, var(--ifm-color-primary), transparent);
+  color: var(--ifm-color-primary) !important;
+  font-weight: 600;
+  border-left: 3px solid var(--ifm-color-primary);
+  border-radius: 0.25rem 0.5rem 0.5rem 0.25rem;
+}
+
+.menu__list {
+  padding: 0.25rem 0;
+}
+
+.menu__list-item {
+  margin-bottom: 0.125rem;
+}
+
+.menu__list-item--collapsed .menu__link {
+  opacity: 0.8;
+}
+
+.menu__list-item--collapsed .menu__link:hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* Category headers in sidebar */
+.menu__list-item-collapsible .menu__link {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.05));
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.menu__list-item-collapsible--collapsed .menu__link::before {
+  content: '▸';
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.menu__list-item-collapsible .menu__link::before {
+  content: '▾';
+  margin-right: 0.5rem;
+}
+
+/* Reading progress indicator */
+.theme-doc-sidebar-item {
+  position: relative;
+}
+
+.theme-doc-sidebar-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 70%;
+  background: var(--ifm-color-primary);
+  border-radius: 0 2px 2px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.theme-doc-sidebar-item--active::after {
+  opacity: 1;
+}
+
+/* Table of Contents styling */
+.table-of-contents {
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.table-of-contents__link {
+  color: var(--ifm-text-color);
+  transition: all 0.2s ease;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0.125rem 0;
+}
+
+.table-of-contents__link:hover {
+  background: var(--ifm-hover-overlay);
+  color: var(--ifm-color-primary);
+  transform: translateX(4px);
+}
+
+.table-of-contents__link--active {
+  background: var(--ifm-color-primary);
+  color: white;
+  font-weight: 600;
+}
+
+/* Chapter navigation buttons */
+.pagination-nav__link {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+}
+
+.pagination-nav__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
+}
+
+.pagination-nav__label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ifm-caption-color);
+  margin-bottom: 0.25rem;
+}
+
+.pagination-nav__title {
+  font-weight: 600;
+  color: var(--ifm-text-color);
+}
+
+/* Progress bar for reading */
+.article {
+  position: relative;
+}
+
+.article::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-secondary));
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 100;
+}
+
+/* Enhanced code blocks */
+pre {
+  border-radius: 0.75rem !important;
+  margin: 1.5rem 0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Mermaid diagrams styling */
+div.mermaid {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* FORCE SIDEBAR TO LEFT SIDE */
+@media (min-width: 997px) {
+  .menu {
+    left: 0 !important;
+    right: auto !important;
+  }
+
+  .menu__list {
+    left: 0 !important;
+    right: auto !important;
+  }
+}
+
+/* Hide right sidebar if it exists */
+.menu__sidebar-right {
+  display: none !important;
+}
+
+/* Ensure main content is on the right of sidebar */
+.main-wrapper {
+  flex-direction: row !important;
+}
+
+.main-wrapper main {
+  order: 2 !important;
+  margin-left: 0 !important;
+}
+
+.main-wrapper .menu-sidebar {
+  order: 1 !important;
+}
+
+/* Doc page content adjustments */
+.doc {
+  margin-left: 0 !important;
+}
+
+/* Remove all styles from __docusaurus_skipToContent_fallback */
+#__docusaurus_skipToContent_fallback {
+  all: unset !important;
+  display: block !important;
+}
+
+

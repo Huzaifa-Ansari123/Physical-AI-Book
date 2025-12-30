@@ -1,0 +1,419 @@
+/* Robot Container */
+.robotContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 3rem;
+}
+
+/* Robot Head */
+.robotHead {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(145deg, #1e1e2e, #2a2a3e);
+  border-radius: 45% 45% 50% 50%;
+  box-shadow:
+    0 20px 50px rgba(99, 102, 241, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  animation: float 4s ease-in-out infinite;
+  transform-origin: center bottom;
+  transition: all 0.5s ease;
+}
+
+.robotHead::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: inherit;
+  background: linear-gradient(145deg, #252535, #1e1e2e);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.robotHead.awake {
+  box-shadow:
+    0 20px 50px rgba(99, 102, 241, 0.5),
+    0 0 100px rgba(168, 85, 247, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Antenna */
+.antenna {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 35px;
+  background: linear-gradient(to top, #6366f1, #a855f7);
+  border-radius: 2px;
+}
+
+.antennaBall {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  border-radius: 50%;
+  box-shadow:
+    0 0 10px rgba(168, 85, 247, 0.6),
+    0 0 20px rgba(236, 72, 153, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Ears */
+.ear {
+  position: absolute;
+  top: 40px;
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(145deg, #2a2a3e, #1e1e2e);
+  border-radius: 10px;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.ear:first-child {
+  left: -12px;
+}
+
+.ear:last-child {
+  right: -12px;
+}
+
+/* Face */
+.face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 80px;
+}
+
+/* Eyes */
+.eyes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 5px;
+}
+
+.eye {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(145deg, #0f0f1a, #1a1a2e);
+  border-radius: 50%;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  animation: blink 4s infinite;
+}
+
+.eye.leftEye {
+  animation-delay: 0s;
+}
+
+.eye.rightEye {
+  animation-delay: 0.1s;
+}
+
+@keyframes blink {
+  0%, 48%, 52%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.1);
+  }
+}
+
+.pupil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at 30% 30%, #c7d2fe, #6366f1);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
+  animation: look 6s ease-in-out infinite;
+}
+
+@keyframes look {
+  0%, 20%, 100% {
+    transform: translate(-50%, -50%);
+  }
+  25%, 35% {
+    transform: translate(-30%, -50%);
+  }
+  40%, 60% {
+    transform: translate(-70%, -50%);
+  }
+  65%, 75% {
+    transform: translate(-50%, -40%);
+  }
+  80%, 90% {
+    transform: translate(-50%, -60%);
+  }
+}
+
+/* Mouth */
+.mouth {
+  width: 40px;
+  height: 8px;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.mouthLine {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mouth.smiling {
+  animation: smile 0.5s ease forwards;
+}
+
+.mouth.smiling .mouthLine {
+  height: 0;
+  border-radius: 0 0 20px 20px;
+  border: 3px solid;
+  border-color: #6366f1;
+  border-top: none;
+  background: transparent;
+}
+
+@keyframes smile {
+  from {
+    transform: scaleX(0.5);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Cheeks */
+.cheek {
+  position: absolute;
+  top: 55px;
+  width: 12px;
+  height: 8px;
+  background: rgba(236, 72, 153, 0.3);
+  border-radius: 50%;
+  filter: blur(3px);
+}
+
+.cheek:first-child {
+  left: 5px;
+}
+
+.cheek:last-child {
+  right: 5px;
+}
+
+/* Body Glow */
+.bodyGlow {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 40px;
+  background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.2), transparent);
+  filter: blur(10px);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.2);
+  }
+}
+
+/* Particles */
+.robotParticles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(99, 102, 241, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+}
+
+.p1 {
+  top: 20%;
+  left: 10%;
+  animation: orbit 8s linear infinite;
+  animation-delay: 0s;
+}
+
+.p2 {
+  top: 30%;
+  right: 15%;
+  animation: orbit 10s linear infinite reverse;
+  animation-delay: 1s;
+}
+
+.p3 {
+  bottom: 25%;
+  left: 15%;
+  animation: orbit 12s linear infinite;
+  animation-delay: 2s;
+}
+
+.p4 {
+  bottom: 30%;
+  right: 10%;
+  animation: orbit 9s linear infinite reverse;
+  animation-delay: 3s;
+}
+
+.p5 {
+  top: 50%;
+  left: 5%;
+  background: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+  animation: orbit 11s linear infinite;
+  animation-delay: 4s;
+}
+
+.p6 {
+  top: 45%;
+  right: 5%;
+  background: rgba(236, 72, 153, 0.6);
+  box-shadow: 0 0 8px rgba(236, 72, 153, 0.5);
+  animation: orbit 13s linear infinite reverse;
+  animation-delay: 5s;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(80px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(80px) rotate(-360deg);
+  }
+}
+
+/* Pulse Ring */
+.pulseRing {
+  position: absolute;
+  inset: -20px;
+  border: 2px solid rgba(99, 102, 241, 0.3);
+  border-radius: 50%;
+  animation: ripple 3s ease-out infinite;
+}
+
+.pulseRing::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 2px solid rgba(168, 85, 247, 0.2);
+  border-radius: 50%;
+  animation: ripple 3s ease-out infinite 1s;
+}
+
+.pulseRing::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 2px solid rgba(236, 72, 153, 0.15);
+  border-radius: 50%;
+  animation: ripple 3s ease-out infinite 2s;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme='light'] .robotHead {
+  background: linear-gradient(145deg, #ffffff, #f0f0f5);
+  box-shadow:
+    0 20px 50px rgba(99, 102, 241, 0.2),
+    inset 0 2px 4px rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='light'] .robotHead::before {
+  background: linear-gradient(145deg, #ffffff, #e8e8f0);
+}
+
+[data-theme='light'] .antenna {
+  background: linear-gradient(to top, #818cf8, #c084fc);
+}
+
+[data-theme='light'] .antennaBall {
+  background: linear-gradient(135deg, #c084fc, #fb7185);
+}
+
+[data-theme='light'] .ear {
+  background: linear-gradient(145deg, #f0f0f5, #e0e0eb);
+}
+
+[data-theme='light'] .eye {
+  background: linear-gradient(145deg, #e8e8f0, #d0d0de);
+}
+
+[data-theme='light'] .pupil {
+  background: radial-gradient(circle at 30% 30%, #a5b4fc, #6366f1);
+}
+
+[data-theme='light'] .mouthLine {
+  background: linear-gradient(90deg, #818cf8, #c084fc);
+}
